@@ -1,0 +1,195 @@
+/* Paleta de Colores Cananvalle */
+:root {
+    --blue-dark: #1b365d;
+    --cream-bg: #fdfbf7;
+    --white: #ffffff;
+    --text-muted: #5a6b82;
+    --accent-gold: #c5a059; /* Un dorado sutil para contrastar con el azul si se desea */
+}
+
+/* Base y Fondo */
+body {
+    background-color: var(--cream-bg);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--blue-dark);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Contenedor principal para centrado vertical */
+.main-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+/* Header y Logo */
+.header-section {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInDown 1.2s ease;
+}
+
+.main-logo {
+    max-width: 350px;
+    height: auto;
+    /* Efecto para integrar el fondo si no es transparente */
+    mix-blend-mode: multiply;
+}
+
+/* Grid de Navegación */
+.section-grid {
+    animation: fadeInScale 1s ease forwards;
+}
+
+/* Tarjetas de Políticas */
+.policy-card {
+    background: var(--white);
+    border-radius: 2px; /* Bordes más rectos para mayor seriedad corporativa */
+    padding: 40px 30px;
+    text-decoration: none;
+    color: var(--blue-dark);
+    display: block;
+    height: 100%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(27, 54, 93, 0.05);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 0px solid var(--blue-dark);
+}
+
+.policy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(27, 54, 93, 0.12);
+    border-left: 8px solid var(--blue-dark);
+    color: var(--blue-dark);
+}
+
+.icon-accent {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.policy-card:hover .icon-accent {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.policy-card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.policy-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.btn-view {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--blue-dark);
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.policy-card:hover .btn-view {
+    opacity: 1;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.slogan {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.5;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Ajustes para Móviles */
+@media (max-width: 768px) {
+    .main-wrapper {
+        padding: 20px;
+    }
+    .main-logo {
+        max-width: 250px;
+    }
+}
+/* --- Estilos adicionales para subpáginas de documentos --- */
+
+/* Botón de regresar */
+.btn-back {
+    display: inline-block;
+    color: var(--blue-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    border: 1px solid rgba(27, 54, 93, 0.2);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: var(--blue-dark);
+    color: var(--white);
+}
+
+.btn-back i {
+    margin-right: 8px;
+}
+
+/* Ajuste para tarjetas de documentos (más compactas) */
+.doc-card {
+    padding: 30px 25px; /* Ligeramente más pequeñas que las del index */
+}
+
+.doc-card h2 {
+    font-size: 1.1rem; /* Título un poco más pequeño */
+}
+
+.doc-card .icon-accent {
+    font-size: 2rem; /* Icono de PDF un poco más pequeño */
+    margin-bottom: 15px;
+    color: #c0392b; /* Opcional: darle un tono rojizo sutil al icono de PDF para que se reconozca fácil */
+}
+
+.doc-card:hover .icon-accent {
+    color: var(--blue-dark); /* Vuelve al azul al hacer hover */
+}
