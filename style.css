@@ -8,13 +8,26 @@
 }
 
 /* Base y Fondo */
+/* --- Opción 2: Fondo degradado animado --- */
 body {
-    background-color: var(--cream-bg);
+    /* Degradado suave de colores */
+    background: linear-gradient(-45deg, var(--cream-bg), #f4f1e1, #eef2f5, var(--cream-bg));
+    background-size: 400% 400%;
+    background-attachment: fixed; /* <-- ESTO EVITA EL ESPACIO BLANCO AL HACER SCROLL */
+    animation: gradientBreathe 20s ease infinite; 
+    
     font-family: 'Montserrat', sans-serif;
     color: var(--blue-dark);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    min-height: 100vh; /* <-- Asegura que cubra toda la pantalla siempre */
+}
+
+@keyframes gradientBreathe {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Contenedor principal para centrado vertical */
